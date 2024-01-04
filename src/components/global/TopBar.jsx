@@ -30,7 +30,7 @@ import SearchIcon from "@mui/icons-material/Search";
       {/* SEARCH BAR */}
       <Box display="flex" borderRadius="3px">
         <InputBase 
-        sx={{ ml:35, flex: 1 }} 
+        sx={{ ml:35, flex: 1 }}  
         placeholder="Search" />
         <IconButton type="button" sx={{ p:1}}>
           <SearchIcon />
