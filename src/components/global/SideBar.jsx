@@ -30,6 +30,8 @@ const CustomSidebar = () => {
 
   // Set the background color for sub-menu items in dark mode
   const subMenuItemStyle = colorMode === "dark" ? { backgroundColor: colors.primary[900] } : {};
+  // const hoverColor = colorMode === "dark" ? colors.primary[700] : colors.primary[200];
+
 
   return (
     <Box
@@ -47,12 +49,12 @@ const CustomSidebar = () => {
       pr={2}
 
       sx={{
+        // ... (previous styles)
         "& .css-dip3t8": {
           backgroundColor: "transparent !important",
         },
-
-        "& .pro-menu .pro-sub-menu .pro-menu-item": subMenuItemStyle, // Add this line
       }}
+
 
 
     >

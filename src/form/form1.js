@@ -8,10 +8,17 @@ import Header from "../components/header/header";
 export const Form = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
-  const handleFormSubmit = (values) => {
-    console.log(values);
-  };
 
+
+  const handleFormSubmit = (values) => {
+    // Log the values to the console
+    console.log("Form Values:", values);
+    console.log("hassan")
+  
+    // Save the form values to local storage
+    localStorage.setItem("formValues", JSON.stringify(values));
+  };
+  
   return (
     <Box m="20px"
       ml="101px"
@@ -305,12 +312,12 @@ export const Form = () => {
               helperText={touched.address2 && errors.address2}
               sx={{ gridColumn: "span 4" }}
             />
-            </Box>
+          </Box>
             <Box display="flex" justifyContent="end" mt="20px">
-              <Button type="submit" color="secondary" variant="contained">
-                Create New User
-              </Button>
-            </Box>
+            <Button type="submit" color="secondary" variant="contained">
+               Create New User
+             </Button>     
+          </Box>
           </form>
         )}
       </Formik>
