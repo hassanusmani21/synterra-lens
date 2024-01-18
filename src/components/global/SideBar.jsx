@@ -17,7 +17,6 @@ const CustomSidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const [selected, setSelected] = useState("Dashboard");
   const colorMode = useContext(ColorModeContext);
   const backgroundColor = colorMode === "dark" ? colors.primary[900] : theme.palette.background.default;
  
@@ -32,6 +31,14 @@ const CustomSidebar = () => {
   const subMenuItemStyle = colorMode === "dark" ? { backgroundColor: colors.primary[900] } : {};
 
   
+    // const handleMenuItemClick = () => {
+    //   // Hide the sidebar when a menu item is clicked
+    //   setIsCollapsed(true);
+    // };
+
+    
+  
+  
 
   return (
     <Box
@@ -44,7 +51,8 @@ const CustomSidebar = () => {
         top: 0,
         left: 0,
         bottom: 0,
-        zIndex: 100,
+        zIndex: 2,
+        paddingRight:'0px'
       }}
       pr={2}
 
@@ -52,7 +60,8 @@ const CustomSidebar = () => {
         // ... (previous styles)
         "& .css-dip3t8": {
           backgroundColor: "transparent !important",
-        },
+        }
+
       }}
 
 
@@ -68,6 +77,9 @@ const CustomSidebar = () => {
             flex: 1,
             overflowY: "auto",
           }}
+
+        
+          
         >
           <Menu iconShape="square">
             <MenuItem
@@ -133,26 +145,37 @@ const CustomSidebar = () => {
             >
               <Menu>
                 {/* Customer */}
-                <SubMenu label="Customer" icon={<PersonIcon />} styles={{ subMenu: subMenuItemStyle }}
-                
+                <SubMenu label="Customer" icon={<PersonIcon />} styles={{ subMenu: subMenuItemStyle,}}
+
                 >
-                  <MenuItem icon={<AddBoxIcon />}>
-                    <Link to="/form">New</Link>
+                  <MenuItem icon={<AddBoxIcon />}
+                  onClick={() => setIsCollapsed(!isCollapsed)}
+                  >
+                    
+                    <Link to="/form">New1</Link>
                   </MenuItem>
-                  <MenuItem icon={<EditIcon />}>
-                    <Link to="/item2">Edit</Link>
+                  <MenuItem icon={<EditIcon />}
+                  onClick={() => setIsCollapsed(!isCollapsed)}>
+                    <Link to="/form2">Edit</Link>
                   </MenuItem>
                 </SubMenu>
 
                 {/* Sales Inquiry */}
-                <SubMenu label="Sales Inquiry" icon={<PersonIcon />} styles={{ subMenu: subMenuItemStyle }}>
+                <SubMenu label="Sales Inquiry" 
+                icon={<PersonIcon />} 
+                styles={{ subMenu: subMenuItemStyle }}>
+
                   <MenuItem icon={<AddBoxIcon />}>New </MenuItem>
                   <MenuItem icon={<EditIcon />}>Edit</MenuItem>
                 </SubMenu>
 
                 {/* Quotation */}
-                <SubMenu label="Quotation" icon={<PersonIcon />} styles={{ subMenu: subMenuItemStyle }}>
-                  <MenuItem icon={<AddBoxIcon />}>New </MenuItem>
+                <SubMenu label="Quotation" 
+                icon={<PersonIcon />} 
+                styles={{ subMenu: subMenuItemStyle }}>
+                  <MenuItem icon={<AddBoxIcon />}
+                  onClick={() => setIsCollapsed(!isCollapsed)}
+                  >New </MenuItem>
                   <MenuItem icon={<EditIcon />}>Edit</MenuItem>
                 </SubMenu>
 
