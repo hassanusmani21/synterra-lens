@@ -164,8 +164,11 @@ const CustomSidebar = () => {
                 <SubMenu label="Sales Inquiry" 
                 icon={<PersonIcon />} 
                 styles={{ subMenu: subMenuItemStyle }}>
-
-                  <MenuItem icon={<AddBoxIcon />}>New </MenuItem>
+ 
+                <MenuItem icon={<EditIcon />}
+                  onClick={() => setIsCollapsed(!isCollapsed)}>
+                    <Link to="/SalesInquiry">Edit</Link>
+                  </MenuItem>
                   <MenuItem icon={<EditIcon />}>Edit</MenuItem>
                 </SubMenu>
 
@@ -173,9 +176,10 @@ const CustomSidebar = () => {
                 <SubMenu label="Quotation" 
                 icon={<PersonIcon />} 
                 styles={{ subMenu: subMenuItemStyle }}>
-                  <MenuItem icon={<AddBoxIcon />}
-                  onClick={() => setIsCollapsed(!isCollapsed)}
-                  >New </MenuItem>
+                   <MenuItem icon={<EditIcon />}
+                  onClick={() => setIsCollapsed(!isCollapsed)}>
+                    <Link to="/Quotation">Edit</Link>
+                  </MenuItem>
                   <MenuItem icon={<EditIcon />}>Edit</MenuItem>
                 </SubMenu>
 

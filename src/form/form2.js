@@ -18,6 +18,7 @@ export const Form2 = () => {
     cstNo: '',
   });
 
+
   const handleInputChange = (e) => {
     const { name, value} = e.target;
     setFormData((prevData) => ({
@@ -29,7 +30,7 @@ export const Form2 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form data submitted:', formData);
-    // You can perform further actions with the form data here
+    localStorage.setItem('myObject', JSON.stringify(formData));
   };
 
   return (
