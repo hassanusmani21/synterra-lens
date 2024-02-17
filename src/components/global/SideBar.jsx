@@ -149,15 +149,17 @@ const CustomSidebar = () => {
 
                 >
                   <MenuItem icon={<AddBoxIcon />}
-                  onClick={() => setIsCollapsed(!isCollapsed)}
-                  >
-                    
-                    <Link to="/form">New1</Link>
-                  </MenuItem>
-                  <MenuItem icon={<EditIcon />}
                   onClick={() => setIsCollapsed(!isCollapsed)}>
-                    <Link to="/form2">Edit</Link>
+                  <Link to="/form">New</Link>
                   </MenuItem>
+
+
+                  <MenuItem icon={<EditIcon />}
+                   onClick={() => setIsCollapsed(!isCollapsed)}>
+                    <Link to="/Customer">Edit</Link>
+                  </MenuItem>
+
+                  
                 </SubMenu>
 
                 {/* Sales Inquiry */}
@@ -169,6 +171,8 @@ const CustomSidebar = () => {
                   onClick={() => setIsCollapsed(!isCollapsed)}>
                     <Link to="/SalesInquiry">Edit</Link>
                   </MenuItem>
+
+
                   <MenuItem icon={<EditIcon />}>Edit</MenuItem>
                 </SubMenu>
 
@@ -185,14 +189,20 @@ const CustomSidebar = () => {
 
                 {/* Ofm */}
                 <SubMenu label="Ofm" icon={<PersonIcon />} styles={{ subMenu: subMenuItemStyle }}>
-                  <MenuItem icon={<AddBoxIcon />}>New </MenuItem>
+                <MenuItem icon={<EditIcon />}
+                  onClick={() => setIsCollapsed(!isCollapsed)}>
+                    <Link to="/OfmId">Edit</Link>
+                  </MenuItem>
                   <MenuItem icon={<EditIcon />}>Edit</MenuItem>
                 </SubMenu>
 
                 {/* Ofm Communication */}
                 <SubMenu label="Ofm Communication" icon={<PersonIcon />} styles={{ subMenu: subMenuItemStyle }}>
                   <MenuItem icon={<AddBoxIcon />}>Dashboard</MenuItem>
-                  <MenuItem icon={<EditIcon />}>Ofm Communication List</MenuItem>
+                  <MenuItem icon={<EditIcon />}
+                  onClick={() => setIsCollapsed(!isCollapsed)}>
+                    <Link to="/OfmCommunication">Ofm Communication List</Link>
+                  </MenuItem>
                   <MenuItem icon={<EditIcon />}>Ofm To OA-Link</MenuItem>
                 </SubMenu>
 

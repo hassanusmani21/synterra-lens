@@ -2,61 +2,47 @@ import React, { useState } from 'react';
 import { Container, Typography, TextField, Button, Grid } from '@mui/material';
 import Header from '../../components/header/header';
 
-export const Quotation = () => {
+export const SalesInquiry = () => {
   const [formData, setFormData] = useState({
     
-        quotationId: 0,
-        companyId: 0,
+        salesInquiryId: "",
+        approvedDisapproved: "",
+        dt: "",
+        companyId:"",
         factoryUnitId: "",
         categoryId: "",
-        customerId: "",
-        attentionTo: "",
+        customerId:"",
+        address: "",
+        contactPerson: "",
         designation: "",
-        enquiryNo: "",
-        enquiryDate: "",
-        dueOn: "",
-        transportId: "",
         specialComments: "",
-        engineer:"",
-        budgetoryOffer:"",
-        packingandForwarding:"",
-        exciseDuty:"" ,
-        salesTax: "",
-        salesTaxTypeId: "",
-        freight: "",
-        priceTermId: "",
-        paymentTerms: "",
-        warranty:"",
-        type: "",
-        statement: "",
-        startStatement: "",
-        endStatement: "",
+        engineer: "",
+        emailId: "",
+        mobileNo: "",
         signatoryName: "",
         signatoryDesignation: "",
+        sourceId: "",
+        branchId: "",
+        countryId:"",
+        sgst: "",
+        cgst: "",
+        igst: "",
+        transactionTypeId: "",
+        validity: "",
+        deliverySchedule: "",
+        grandTotal: "",
+        discount: "",
+        revisionNo: "",
+        revisionDate: "",
         insertedOn: "",
         lastUpdatedOn: "",
         insertedByUserId: "",
         lastUpdatedByUserId: "",
-        quotationNo: "",
-        quotationDt: "",
-        branchid: "",
-        countryId:"",
-        sgst: "",
-        cgst:"",
-        igst:"",
-        amendmentNo: "",
-        amendmentDt: "",
-        address: "",
-        transactionTypeId:"",
-        validity: "",
-        deliverySchedule: "",
-        grandTotal:"",
-        discount: "",
-        revisionNo: "",
-        revisionDate: "",
-        quotationSourceId: "",
-        salesInquiryId: "",
-        custEnquiryNo: ""
+        salesInquiryNo: "",
+        industryId: "",
+        approvedDisapprovedOn: "",
+        approvedDisapprovedByUserId: ""
+      
   });
 
 
@@ -76,7 +62,7 @@ export const Quotation = () => {
 
   return (
     <Container>
-      <Header title="Quotation" subtitle="Create a New User Profile" />
+      <Header title="Sales Inquiry" subtitle="Create a New User Profile" />
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}
         sx={{
@@ -124,14 +110,40 @@ export const Quotation = () => {
         }}
         >
           <Grid item xs={4}>
-            <Typography>Quotation Id:</Typography>
+            <Typography>Sales Inquiry Id:</Typography>
             <TextField
               variant="outlined"
               fullWidth
-              name="quotationId"
-              type='number'
-              placeholder='quotationId'
-              value={formData.quotationId}
+              name="salesInquiryId"
+              type='text'
+              placeholder='Sales Inquiry Id'
+              value={formData.salesInquiryId}
+              onChange={handleInputChange}
+            />
+          </Grid>
+
+          <Grid item xs={4}>
+            <Typography>Approved Disapproved:</Typography>
+            <TextField
+              variant="outlined"
+              fullWidth
+              name="approvedDisapproved"
+              type='text'
+              placeholder='Approved Disapproved'
+              value={formData.approvedDisapproved}
+              onChange={handleInputChange}
+            />
+          </Grid>
+
+          <Grid item xs={4}>
+            <Typography>Dt:</Typography>
+            <TextField
+              variant="outlined"
+              fullWidth
+              name="dt"
+              type='text'
+              placeholder='Dt'
+              value={formData.dt}
               onChange={handleInputChange}
             />
           </Grid>
@@ -149,55 +161,29 @@ export const Quotation = () => {
             />
           </Grid>
 
+
           <Grid item xs={4}>
-            <Typography>FactoryUni Id:</Typography>
+            <Typography>factory Unit Id:</Typography>
             <TextField
               variant="outlined"
               fullWidth
-              name="dt"
-              type='factoryUnitId'
-              placeholder='dt'
+              name="factoryUnitId"
+              type='text'
+              placeholder='Factory Unit Id'
               value={formData.factoryUnitId}
               onChange={handleInputChange}
             />
           </Grid>
 
-          <Grid item xs={12}>
+
+          <Grid item xs={4}>
             <Typography>Category Id:</Typography>
             <TextField
               variant="outlined"
               fullWidth
               name="categoryId"
-              type='text'
-              placeholder='categoryId'
-              value={formData.categoryId}
-              onChange={handleInputChange}
-            />
-          </Grid>
-
-
-          <Grid item xs={4}>
-            <Typography>Attention To:</Typography>
-            <TextField
-              variant="outlined"
-              fullWidth
-              name="customerId"
-              type='text'
-              placeholder='Customer Id'
-              value={formData.customerId}
-              onChange={handleInputChange}
-            />
-          </Grid>
-
-
-          <Grid item xs={4}>
-            <Typography>Designation:</Typography>
-            <TextField
-              variant="outlined"
-              fullWidth
-              name="categoryId"
-              type='text'
-              placeholder='categoryId'
+              type='number'
+              placeholder='Category Id'
               value={formData.categoryId}
               onChange={handleInputChange}
             />
@@ -223,7 +209,7 @@ export const Quotation = () => {
               fullWidth
               name="address"
               type='number'
-              placeholder='address'
+              placeholder='Address'
               value={formData.address}
               onChange={handleInputChange}
             />
@@ -237,7 +223,7 @@ export const Quotation = () => {
               fullWidth
               name="contactPerson"
               type='text'
-              placeholder='Fax No'
+              placeholder='Contact Person'
               value={formData.contactPerson}
               onChange={handleInputChange}
             />
@@ -250,7 +236,7 @@ export const Quotation = () => {
               fullWidth
               name="designation"
               type='number'
-              placeholder='Ecc No'
+              placeholder='Designation'
               value={formData.designation}
               onChange={handleInputChange}
             />
@@ -263,7 +249,7 @@ export const Quotation = () => {
               fullWidth
               name="specialComments"
               type='number'
-              placeholder='Designation'
+              placeholder='Special Comments'
               value={formData.specialComments}
               onChange={handleInputChange}
             />
@@ -275,8 +261,8 @@ export const Quotation = () => {
               variant="outlined"
               fullWidth
               name="engineer"
-               type='datetime-local'
-              placeholder='SpecialComments'
+               type='text'
+              placeholder='Engineer'
               value={formData.engineer}
               onChange={handleInputChange}
             />
@@ -355,7 +341,7 @@ export const Quotation = () => {
               variant="outlined"
               fullWidth
               name="branchId"
-              type='text'
+              type='number'
               placeholder='Branch Id'
               value={formData.branchId}
               onChange={handleInputChange}
@@ -369,7 +355,7 @@ export const Quotation = () => {
               variant="outlined"
               fullWidth
               name="countryId"
-              type='text'
+              type='number'
               placeholder='CountryId'
               value={formData.countryId}
               onChange={handleInputChange}
@@ -383,7 +369,7 @@ export const Quotation = () => {
               variant="outlined"
               fullWidth
               name="sgst"
-              type='text'
+              type='number'
               placeholder='sgst'
               value={formData.sgst}
               onChange={handleInputChange}
@@ -396,7 +382,7 @@ export const Quotation = () => {
               variant="outlined"
               fullWidth
               name="cgst"
-              type='text'
+              type='number'
               placeholder='C gst'
               value={formData.cgst}
               onChange={handleInputChange}
@@ -409,7 +395,7 @@ export const Quotation = () => {
               variant="outlined"
               fullWidth
               name="igst"
-              type='text'
+              type='number'
               placeholder='igst'
               value={formData.igst}
               onChange={handleInputChange}
@@ -423,7 +409,7 @@ export const Quotation = () => {
               fullWidth
               name="transactionTypeId"
               type='text'
-              placeholder='transactionTypeId'
+              placeholder='Transaction Type Id'
               value={formData.transactionTypeId}
               onChange={handleInputChange}
             />
@@ -436,7 +422,7 @@ export const Quotation = () => {
               fullWidth
               name="validity"
               type='text'
-              placeholder='validity'
+              placeholder='Validity'
               value={formData.validity}
               onChange={handleInputChange}
             />
@@ -449,7 +435,7 @@ export const Quotation = () => {
               fullWidth
               name="deliverySchedule"
               type='text'
-              placeholder='deliverySchedule'
+              placeholder='Delivery Schedule'
               value={formData.deliverySchedule}
               onChange={handleInputChange}
             />
@@ -461,8 +447,8 @@ export const Quotation = () => {
               variant="outlined"
               fullWidth
               name="grandTotal"
-              type='text'
-              placeholder='grandTotal'
+              type='number'
+              placeholder='Grand Total'
               value={formData.grandTotal}
               onChange={handleInputChange}
             />
@@ -474,8 +460,8 @@ export const Quotation = () => {
               variant="outlined"
               fullWidth
               name="discount"
-              type='text'
-              placeholder='discount'
+              type='number'
+              placeholder='Discount'
               value={formData.discount}
               onChange={handleInputChange}
             />
@@ -514,8 +500,35 @@ export const Quotation = () => {
               variant="outlined"
               fullWidth
               name="revisionNo"
-              type='text'
+              type='number'
               placeholder='revisionNo'
+              value={formData.revisionNo}
+              onChange={handleInputChange}
+            />
+          </Grid>
+
+          
+          <Grid item xs={4}>
+            <Typography>Revision Date:</Typography>
+            <TextField
+              variant="outlined"
+              fullWidth
+              name="revisionNo"
+              type='datetime-local'
+              placeholder='Revision Date'
+              value={formData.revisionDate}
+              onChange={handleInputChange}
+            />
+          </Grid>
+
+          <Grid item xs={4}>
+            <Typography>Inserted On:</Typography>
+            <TextField
+              variant="outlined"
+              fullWidth
+              name="revisionNo"
+              type='text'
+              placeholder='insertedOn'
               value={formData.revisionNo}
               onChange={handleInputChange}
             />
@@ -555,7 +568,7 @@ export const Quotation = () => {
               fullWidth
               name="lastUpdatedByUserId"
               type='text'
-              placeholder='lastUpdatedByUserId'
+              placeholder='Last Updated By User Id'
               value={formData.lastUpdatedByUserId}
               onChange={handleInputChange}
             />
@@ -580,7 +593,7 @@ export const Quotation = () => {
               variant="outlined"
               fullWidth
               name="industryId"
-              type='text'
+              type='number'
               placeholder='industryId'
               value={formData.industryId}
               onChange={handleInputChange}
@@ -595,7 +608,7 @@ export const Quotation = () => {
               fullWidth
               name="approvedDisapprovedOn"
               type='text'
-              placeholder='industryId'
+              placeholder='Industry Id'
               value={formData.approvedDisapprovedOn}
               onChange={handleInputChange}
             />
@@ -608,7 +621,7 @@ export const Quotation = () => {
               fullWidth
               name="approvedDisapprovedByUserId"
               type='text'
-              placeholder='approvedDisapprovedByUserId'
+              placeholder='Approved Disapproved By User Id'
               value={formData.approvedDisapprovedByUserId}
               onChange={handleInputChange}
             />
